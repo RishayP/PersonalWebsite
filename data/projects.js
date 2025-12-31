@@ -3,6 +3,12 @@ const items = [
     year: '2025 — Present',
     projects: [
       {
+        title: 'Personal Website',
+        description: 'Personal portfolio website built with Next.js',
+        url: 'https://github.com/RishayP/PersonalWebsite',
+        active: true,
+      },
+      {
         title: 'ScottyLabs',
         description: 'CMU app tracking macros from campus eateries with meal recommendations',
         url: 'https://github.com/ScottyLabs',

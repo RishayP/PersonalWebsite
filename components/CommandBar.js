@@ -20,10 +20,7 @@ import aboutIcon from '../public/static/icons/about.json'
 import homeIcon from '../public/static/icons/home.json'
 import articlesIcon from '../public/static/icons/articles.json'
 import projectsIcon from '../public/static/icons/projects.json'
-import talksIcon from '../public/static/icons/talks.json'
-import podcastsIcon from '../public/static/icons/podcasts.json'
 import usesIcon from '../public/static/icons/uses.json'
-import reminderIcon from '../public/static/icons/reminder.json'
 
 const CommandBarContext = createContext(null)
 
@@ -41,12 +38,11 @@ export default function CommandBar(props) {
   const sourceRef = useRef()
   const homeRef = useRef()
   const aboutRef = useRef()
-  const articlesRef = useRef()
+  const startupRef = useRef()
   const projectsRef = useRef()
-  const talksRef = useRef()
-  const podcastsRef = useRef()
+  const writingRef = useRef()
   const usesRef = useRef()
-  const reminderRef = useRef()
+  const contactRef = useRef()
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [showToast, setShowToast] = useState(false)
@@ -88,7 +84,7 @@ export default function CommandBar(props) {
       keywords: 'view-source',
       section: 'General',
       perform: () => {
-        window.open('https://github.com/zenorocha/zenorocha.com', '_blank')
+        window.open('https://github.com/RishayP/PersonalWebsite', '_blank')
         setOpen(false)
       },
       icon: <Lottie lottieRef={sourceRef} style={iconSize} animationData={sourceIcon} loop={false} autoplay={false} />,
@@ -118,16 +114,16 @@ export default function CommandBar(props) {
       icon: <Lottie lottieRef={aboutRef} style={iconSize} animationData={aboutIcon} loop={false} autoplay={false} />,
     },
     {
-      id: 'articles',
-      name: 'Articles',
-      shortcut: ['g', 'b'],
-      keywords: 'go-articles',
+      id: 'startup',
+      name: 'Startup',
+      shortcut: ['g', 's'],
+      keywords: 'go-startup',
       section: 'Go To',
       perform: () => {
-        router.push('/articles')
+        router.push('/startup')
         setOpen(false)
       },
-      icon: <Lottie lottieRef={articlesRef} style={iconSize} animationData={articlesIcon} loop={false} autoplay={false} />,
+      icon: <Lottie lottieRef={startupRef} style={iconSize} animationData={projectsIcon} loop={false} autoplay={false} />,
     },
     {
       id: 'projects',
@@ -142,28 +138,16 @@ export default function CommandBar(props) {
       icon: <Lottie lottieRef={projectsRef} style={iconSize} animationData={projectsIcon} loop={false} autoplay={false} />,
     },
     {
-      id: 'talks',
-      name: 'Talks',
-      shortcut: ['g', 't'],
-      keywords: 'go-talks',
+      id: 'writing',
+      name: 'Writing',
+      shortcut: ['g', 'w'],
+      keywords: 'go-writing',
       section: 'Go To',
       perform: () => {
-        router.push('/talks')
+        router.push('/writing')
         setOpen(false)
       },
-      icon: <Lottie lottieRef={talksRef} style={iconSize} animationData={talksIcon} loop={false} autoplay={false} />,
-    },
-    {
-      id: 'podcasts',
-      name: 'Podcasts',
-      shortcut: ['g', 'c'],
-      keywords: 'go-podcasts',
-      section: 'Go To',
-      perform: () => {
-        router.push('/podcasts')
-        setOpen(false)
-      },
-      icon: <Lottie lottieRef={podcastsRef} style={iconSize} animationData={podcastsIcon} loop={false} autoplay={false} />,
+      icon: <Lottie lottieRef={writingRef} style={iconSize} animationData={articlesIcon} loop={false} autoplay={false} />,
     },
     {
       id: 'uses',
@@ -178,16 +162,16 @@ export default function CommandBar(props) {
       icon: <Lottie lottieRef={usesRef} style={iconSize} animationData={usesIcon} loop={false} autoplay={false} />,
     },
     {
-      id: 'reminder',
-      name: 'Reminder',
-      shortcut: ['g', 'r'],
-      keywords: 'go-reminder',
+      id: 'contact',
+      name: 'Contact',
+      shortcut: ['g', 'c'],
+      keywords: 'go-contact',
       section: 'Go To',
       perform: () => {
-        router.push('/reminder')
+        router.push('/contact')
         setOpen(false)
       },
-      icon: <Lottie lottieRef={reminderRef} style={iconSize} animationData={reminderIcon} loop={false} autoplay={false} />,
+      icon: <Lottie lottieRef={contactRef} style={iconSize} animationData={emailIcon} loop={false} autoplay={false} />,
     },
   ], [router])
 
