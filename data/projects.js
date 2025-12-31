@@ -8,6 +8,12 @@ const items = [
         url: 'https://github.com/ScottyLabs',
         active: true,
       },
+      {
+        title: 'Platformer Game',
+        description: 'Hackathon platformer game built with a team',
+        url: 'https://github.com/F25-Hack112/hack112-group-25',
+        active: true,
+      },
     ],
   },
   {

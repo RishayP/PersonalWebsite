@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <Header>
       <ButtonLogo as={Link} href="/">
-        z
+        R
       </ButtonLogo>
 
       <Nav>

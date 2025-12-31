@@ -1,17 +1,24 @@
 const startups = [
   {
     title: 'Stratus',
-    description: 'AI code infrastructure and frontier security models for regulated industries.',
-    url: '#',
-    stats: '$175k preseed, 3 LOIs, 50+ enterprise tests',
+    website: '#',
+    problem: 'Regulated industries were hesitant to adopt AI due to security concerns and lack of proper code validation.',
+    whyItMattered: 'AI adoption was being blocked by legitimate security fears, preventing industries like finance and healthcare from leveraging AI capabilities.',
+    constraints: 'Needed to build security models that could validate AI-generated code in real-time, work with existing enterprise infrastructure, and meet strict compliance requirements.',
+    whatWeBuilt: 'AI code infrastructure with frontier security models that perform static and dynamic analysis on AI-generated code, reducing insecure code generations by 55-70% and doubling vulnerability coverage.',
+    whatWeLearned: 'Enterprise sales cycles are long but the pain is real. Security is not a feature, it\'s a requirement. Building trust with regulated industries requires transparency and proven results.',
+    currentStatus: 'Active. Secured $175k in preseed funding (Hustle Fund, VentureBridge), 3 LOIs from enterprises, tested with 50+ companies. Currently focused on product-market fit and scaling.',
   },
   {
     title: 'Diwan',
-    description: 'Dining loyalty network for UAE hospitality groups with virtual card issuance.',
-    url: '#',
-    stats: '5 hospitality groups, 40+ restaurants',
+    website: '#',
+    problem: 'UAE hospitality groups lacked a unified loyalty system across their multiple restaurant venues, leading to fragmented customer experiences.',
+    whyItMattered: 'Customers wanted seamless rewards across different restaurants in the same hospitality group, but existing systems were siloed and didn\'t provide cross-venue benefits.',
+    constraints: 'Had to integrate with multiple POS systems, handle virtual card issuance, create tokenized rewards that worked across venues, and get buy-in from hospitality groups with different technical capabilities.',
+    whatWeBuilt: 'A dining loyalty network with virtual card issuance and tokenized rewards that unified multiple restaurants under hospitality groups, enabling customers to earn and redeem rewards across venues.',
+    whatWeLearned: 'Hospitality is relationship-driven. Technical solutions need to be simple for restaurant staff. Pilot conversations revealed higher enterprise demand for AI security, leading to the pivot to Stratus.',
+    currentStatus: 'Pivoted to Stratus. Secured commitments from 5 hospitality groups representing 40+ restaurants, but market research showed stronger demand and urgency in AI security space.',
   },
 ]
 
 export default startups
-

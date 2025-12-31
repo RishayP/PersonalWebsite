@@ -11,7 +11,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Rishay Puri',
-      description: 'Obsessed with developer experience',
+      description: 'Learning by shipping',
       image: '/static/images/home-bw.jpg',
     },
   }
@@ -45,8 +45,7 @@ export default function Index(props) {
             <div>
               <h1>{title}</h1>
               <p>
-                <strong>Founder & CEO at{' '}
-                  <a href="https://resend.com" target="blank">Resend</a>
+                <strong>CS @ Carnegie Mellon
                 </strong><br />
                 {description}
               </p>
