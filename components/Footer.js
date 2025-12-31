@@ -9,24 +9,14 @@ export default function Footer() {
       icon: 'ri-mail-line',
     },
     {
-      title: 'Twitter',
-      url: 'https://twitter.com/zenorocha',
-      icon: 'ri-twitter-line',
-    },
-    {
       title: 'GitHub',
-      url: 'https://github.com/zenorocha',
+      url: 'https://github.com/RishayP',
       icon: 'ri-github-line',
     },
     {
       title: 'linkedin',
-      url: 'https://linkedin.com/in/zenorocha',
+      url: 'https://www.linkedin.com/in/rishay-puri-49b0a7311',
       icon: 'ri-linkedin-line',
-    },
-    {
-      title: 'Instagram',
-      url: 'https://instagram.com/zenorocha',
-      icon: 'ri-instagram-line',
     },
   ]
 

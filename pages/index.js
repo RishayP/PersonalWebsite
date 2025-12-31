@@ -10,7 +10,7 @@ import { getPersonJsonLd } from '../lib/json-ld'
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Zeno Rocha',
+      title: 'Rishay Puri',
       description: 'Obsessed with developer experience',
       image: '/static/images/home-bw.jpg',
     },

@@ -8,10 +8,10 @@ export default async function sendEmail(req, res) {
     const data = req.body
 
     const { error } = await resend.emails.send({
-      from: 'zenorocha.com <website@zenorocha.com>',
+      from: process.env.RESEND_FROM_EMAIL || 'website@yourdomain.com',
       to: process.env.RESEND_DESTINATION_EMAIL,
       replyTo: data.email,
-      subject: `${data.name} - via zenorocha.com`,
+      subject: `${data.name} - via your website`,
       react: <EmailTemplate {...data} />,
     })
 

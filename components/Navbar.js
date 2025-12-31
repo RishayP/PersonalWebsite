@@ -9,13 +9,11 @@ export default function Navbar() {
   const router = useRouter()
   const pages = [
     'About',
-    'Articles',
+    'Startup',
     'Projects',
-    'Talks',
-    'Podcasts',
-    'Investing',
+    'Writing',
     'Uses',
-    'Reminder',
+    'Contact',
   ]
   const [hovered, setHovered] = useState('')
   const { toggle } = useCommandBar()

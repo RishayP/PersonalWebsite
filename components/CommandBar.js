@@ -22,7 +22,6 @@ import articlesIcon from '../public/static/icons/articles.json'
 import projectsIcon from '../public/static/icons/projects.json'
 import talksIcon from '../public/static/icons/talks.json'
 import podcastsIcon from '../public/static/icons/podcasts.json'
-import investingIcon from '../public/static/icons/investing.json'
 import usesIcon from '../public/static/icons/uses.json'
 import reminderIcon from '../public/static/icons/reminder.json'
 
@@ -46,7 +45,6 @@ export default function CommandBar(props) {
   const projectsRef = useRef()
   const talksRef = useRef()
   const podcastsRef = useRef()
-  const investingRef = useRef()
   const usesRef = useRef()
   const reminderRef = useRef()
   const router = useRouter()
@@ -166,18 +164,6 @@ export default function CommandBar(props) {
         setOpen(false)
       },
       icon: <Lottie lottieRef={podcastsRef} style={iconSize} animationData={podcastsIcon} loop={false} autoplay={false} />,
-    },
-    {
-      id: 'investing',
-      name: 'Investing',
-      shortcut: ['g', 'i'],
-      keywords: 'go-investing',
-      section: 'Go To',
-      perform: () => {
-        router.push('/investing')
-        setOpen(false)
-      },
-      icon: <Lottie lottieRef={investingRef} style={iconSize} animationData={investingIcon} loop={false} autoplay={false} />,
     },
     {
       id: 'uses',

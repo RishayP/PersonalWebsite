@@ -8,7 +8,7 @@ import { styled } from '../stitches.config'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Contact // Zeno Rocha',
+    title: 'Contact // Rishay Puri',
     tagline: 'Emails. Emails. Emails.',
     image: '/static/images/reminder-bw.jpg',
     primaryColor: 'cyan',
@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
 function Contact(props) {
   const { title, image } = props
-  const description = `<strong>I love chatting</strong> with software engineers, tech founders, students, and creators. <strong>I'm a busy person</strong>, so I can't promise that I'll reply to your email right away, but I'll try my best to respond in a timely manner.`
+  const description = `I am open to <strong>conversations and collaborations</strong> around building and technology. If you would like to get in touch, email is the best way to reach me.`
   const [isEmailSent, setIsEmailSent] = React.useState(undefined)
   const [showToast, setShowToast] = React.useState(false)
 

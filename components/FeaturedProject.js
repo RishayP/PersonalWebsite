@@ -8,7 +8,7 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 export default function FeaturedProject(props) {
   const { project } = props
 
-  const icon = require(`../public/static/icons/${project.icon}.json`)
+  const icon = project.icon ? require(`../public/static/icons/${project.icon}.json`) : null
   const iconRef = useRef()
 
   return (
@@ -19,13 +19,15 @@ export default function FeaturedProject(props) {
       onMouseLeave={() => iconRef.current?.stop()}
     >
       <Animation index={props.index}>
-        <Lottie
-          lottieRef={iconRef}
-          style={{ width: 24, height: 24, marginBottom: 10 }}
-          animationData={icon}
-          loop={false}
-          autoplay={false}
-        />
+        {icon && (
+          <Lottie
+            lottieRef={iconRef}
+            style={{ width: 24, height: 24, marginBottom: 10 }}
+            animationData={icon}
+            loop={false}
+            autoplay={false}
+          />
+        )}
         <Body>
           <Title>{project.title}</Title>
           <Description>{project.description}</Description>
