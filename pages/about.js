@@ -93,22 +93,47 @@ function About(props) {
   }
 
   const getDuration = (startDate, endDate) => {
+    const start = parseISO(startDate)
+    const end = endDate ? parseISO(endDate) : new Date()
+    
     const durationObj = intervalToDuration({
-      start: parseISO(startDate),
-      end: endDate ? parseISO(endDate) : new Date(),
+      start,
+      end,
     })
 
-    let durationStr = ''
-
-    if (durationObj.years > 1) {
-      durationStr = `${durationObj.years} yrs `
-    } else if (durationObj.years === 1) {
-      durationStr = `${durationObj.years} yr `
+    // Calculate inclusive months
+    // If both dates are on the 1st, we count inclusive months
+    const startDay = start.getDate()
+    const endDay = end.getDate()
+    
+    // Add 1 month to make it inclusive (e.g., June-August = 3 months, not 2)
+    let totalMonths = durationObj.months
+    if (startDay === 1 && endDay === 1) {
+      totalMonths += 1
     }
 
-    durationStr += `${durationObj.months} mos`
+    // Add months from years
+    totalMonths += (durationObj.years || 0) * 12
 
-    return durationStr
+    // Convert to years and months
+    let years = Math.floor(totalMonths / 12)
+    let months = totalMonths % 12
+
+    // Build duration string
+    const parts = []
+    
+    if (years > 1) {
+      parts.push(`${years} yrs`)
+    } else if (years === 1) {
+      parts.push('1 yr')
+    }
+
+    if (months > 0) {
+      parts.push(`${months} mos`)
+    }
+
+    const result = parts.join(' ')
+    return result || '0 mos'
   }
 
   return (

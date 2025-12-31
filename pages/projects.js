@@ -1,8 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import Base from '../layouts/Base'
-import FeaturedProject from '../components/FeaturedProject'
-import { FeaturedProjects } from '../components/FeaturedProjects'
 import stripHtml from '../lib/strip-html'
 import items from '../data/projects'
 
@@ -19,24 +17,6 @@ export async function getStaticProps() {
 }
 
 function Projects(props) {
-  const renderFeatured = () => {
-    const featured = ['ScottyLabs', 'Rowing Database Website', 'Music Generation']
-
-    return items
-      .map(item => {
-        return item.projects.filter(project => featured.includes(project.title))
-      })
-      .filter(item => {
-        if (item.length > 0) {
-          return item
-        }
-      })
-      .flat()
-      .map((item, index) => {
-        return <FeaturedProject key={index} project={item} />
-      })
-  }
-
   const renderAll = () => {
     return items.map((item, index) => {
       return (
@@ -79,10 +59,6 @@ function Projects(props) {
       <>
         <p dangerouslySetInnerHTML={{ __html: description }} />
 
-        <h2>Featured Projects</h2>
-        <FeaturedProjects>{renderFeatured()}</FeaturedProjects>
-
-        <h2>All Projects</h2>
         {renderAll()}
       </>
     </>

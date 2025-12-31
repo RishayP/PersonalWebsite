@@ -67,9 +67,14 @@ const Project = styled('a', {
   border: '0',
   borderRadius: '$borderRadius',
   textDecoration: 'none',
-  width: 'auto',
+  width: '100%',
   '&:hover': { opacity: 1 },
-  '@bp2': { width: 180 },
+  '@bp2': { 
+    width: 'auto',
+    flex: '1 1 0',
+    minWidth: '280px',
+    maxWidth: '350px',
+  },
 })
 
 const Body = styled('div', {
@@ -101,7 +106,7 @@ const Stats = styled('p', {
 const AnimContainer = styled(motion.span, {
   position: 'relative',
   width: '100%',
-  padding: '20px',
+  padding: '24px',
 })
 
 const AnimHovered = styled(motion.span, {

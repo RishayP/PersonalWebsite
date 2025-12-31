@@ -2,7 +2,7 @@ const items = [
   {
     jobTitle: 'Cofounder',
     company: 'Stratus',
-    companyUrl: '#',
+    companyUrl: 'https://www.stratuslabs.inc/',
     startDate: '2025-09-01',
     location: 'Remote',
   },
@@ -25,7 +25,7 @@ const items = [
   {
     jobTitle: 'Security Intern',
     company: 'OpenEXA',
-    companyUrl: '#',
+    companyUrl: 'http://openexa.ai/',
     startDate: '2024-06-01',
     endDate: '2024-08-01',
     location: 'Remote',
@@ -34,14 +34,14 @@ const items = [
     jobTitle: 'Math Tutor',
     company: '425 Tutoring, King County Library System',
     companyUrl: '#',
-    startDate: '2024-09-01',
+    startDate: '2023-09-01',
     endDate: '2024-08-01',
     location: 'Seattle, Washington',
   },
   {
     jobTitle: 'Data Analysis Intern',
     company: 'Bond Intelligence',
-    companyUrl: '#',
+    companyUrl: 'https://bondintelligence.us/',
     startDate: '2023-06-01',
     endDate: '2023-08-01',
     location: 'Seattle, Washington',
@@ -61,6 +61,14 @@ const items = [
     startDate: '2022-06-01',
     endDate: '2022-08-01',
     location: 'Seattle, Washington',
+  },
+  {
+    jobTitle: 'Skiing Instructor',
+    company: 'Powder Pigs',
+    companyUrl: '#',
+    startDate: '2021-12-01',
+    endDate: '2024-02-01',
+    location: 'Remote',
   },
 ]
 
