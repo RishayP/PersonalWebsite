@@ -21,6 +21,7 @@ import homeIcon from '../public/static/icons/home.json'
 import articlesIcon from '../public/static/icons/articles.json'
 import projectsIcon from '../public/static/icons/projects.json'
 import usesIcon from '../public/static/icons/uses.json'
+import charmIcon from '../public/static/icons/charm.json'
 
 const CommandBarContext = createContext(null)
 
@@ -123,7 +124,7 @@ export default function CommandBar(props) {
         router.push('/startup')
         setOpen(false)
       },
-      icon: <Lottie lottieRef={startupRef} style={iconSize} animationData={projectsIcon} loop={false} autoplay={false} />,
+      icon: <Lottie lottieRef={startupRef} style={iconSize} animationData={charmIcon} loop={false} autoplay={false} />,
     },
     {
       id: 'projects',
@@ -208,7 +209,7 @@ export default function CommandBar(props) {
 
   return (
     <CommandBarContext.Provider value={contextValue}>
-      <StyledCommandDialog open={open} onOpenChange={setOpen}>
+      <StyledCommandDialog open={open} onOpenChange={setOpen} modal={true}>
         <StyledCommandInput placeholder="Type a command or search…" />
         <StyledCommandList>
           <StyledCommandEmpty>No results found.</StyledCommandEmpty>
@@ -244,23 +245,35 @@ function ActionCommandItem({ action, value, onSelect }) {
   const itemRef = useRef(null)
 
   const handleMouseEnter = () => {
-    action.icon?.props?.lottieRef?.current?.play()
+    const lottieInstance = action.icon?.props?.lottieRef?.current
+    if (lottieInstance) {
+      lottieInstance.goToAndPlay(0)
+    }
   }
 
   const handleMouseLeave = () => {
     // Only stop if not selected
     if (itemRef.current?.getAttribute('aria-selected') !== 'true') {
-      action.icon?.props?.lottieRef?.current?.stop()
+      const lottieInstance = action.icon?.props?.lottieRef?.current
+      if (lottieInstance) {
+        lottieInstance.stop()
+      }
     }
   }
 
   // Use MutationObserver or check on focus
   const handleFocus = () => {
-    action.icon?.props?.lottieRef?.current?.play()
+    const lottieInstance = action.icon?.props?.lottieRef?.current
+    if (lottieInstance) {
+      lottieInstance.goToAndPlay(0)
+    }
   }
 
   const handleBlur = () => {
-    action.icon?.props?.lottieRef?.current?.stop()
+    const lottieInstance = action.icon?.props?.lottieRef?.current
+    if (lottieInstance) {
+      lottieInstance.stop()
+    }
   }
 
   return (
@@ -339,16 +352,30 @@ const ActionRow = styled('div', {
 //   },
 
 const StyledCommandDialog = styled(CommandDialog, {
-  position: 'fixed',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '100%',
-  inset: '0px',
-  padding: '14vh 16px 16px',
-  background: 'rgba(0, 0, 0, .8)',
-  boxSizing: 'border-box',
+  '& [data-radix-dialog-overlay]': {
+    position: 'fixed',
+    inset: '0px',
+    backgroundColor: 'rgba(0, 0, 0, .8)',
+    cursor: 'pointer',
+  },
+  '& [cmdk-dialog]': {
+    position: 'fixed',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    inset: '0px',
+    padding: '14vh 16px 16px',
+    boxSizing: 'border-box',
+    pointerEvents: 'none',
+    zIndex: 1,
+  },
+  '& [cmdk-root]': {
+    pointerEvents: 'auto',
+    maxWidth: '600px',
+    width: '100%',
+  },
 })
 
 const StyledCommandInput = styled(CommandInput, {
