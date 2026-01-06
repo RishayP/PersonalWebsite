@@ -5,7 +5,7 @@ const startups = [
     problem: 'Regulated industries were hesitant to adopt AI due to security concerns and lack of proper code validation.',
     whyItMattered: 'AI adoption was being blocked by legitimate security fears, preventing industries like finance and healthcare from leveraging AI capabilities.',
     constraints: 'Needed to build security models that could validate AI-generated code in real-time, work with existing enterprise infrastructure, and meet strict compliance requirements.',
-    whatWeBuilt: 'AI code infrastructure with frontier security models that perform static and dynamic analysis on AI-generated code, reducing insecure code generations by 55-70% and doubling vulnerability coverage.',
+    whatWeBuilt: 'Autonomous security infrastructure that operates inside production environments to continuously detect and fix vulnerabilities in regulated systems.',
     whatWeLearned: 'Enterprise sales cycles are long but the pain is real. Security is not a feature, it\'s a requirement. Building trust with regulated industries requires transparency and proven results.',
     currentStatus: 'Active. Secured $175k in preseed funding (Hustle Fund, VentureBridge), 3 LOIs from enterprises, tested with 50+ companies. Currently focused on product-market fit and scaling.',
   },

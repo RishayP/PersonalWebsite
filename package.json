@@ -20,10 +20,10 @@
     "googleapis": "^166.0.0",
     "gray-matter": "^4.0.3",
     "lottie-react": "^2.3.1",
-    "next": "^16.0.0",
+    "next": "^16.0.7",
     "next-seo": "^7.0.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "reading-time": "^1.5.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
@@ -35,7 +35,7 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.0",
+    "eslint-config-next": "^16.0.7",
     "eslint-config-prettier": "^10.1.8",
     "typescript": "^5.9.3"
   }
