@@ -28,10 +28,8 @@ function Contact(props) {
     e.preventDefault()
 
     try {
-      const isProd = process.env.NODE_ENV === 'production'
-      const base = isProd ? 'https://rishaypuri.com' : 'http://localhost:3000'
-
-      await fetch(`${base}/api/email`, {
+      // Use relative URL to avoid CORS issues
+      await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

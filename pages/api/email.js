@@ -4,6 +4,19 @@ import EmailTemplate from '../../components/EmailTemplate'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export default async function sendEmail(req, res) {
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+    return res.status(200).end()
+  }
+
+  // Set CORS headers for actual request
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+
   try {
     const data = req.body
 
