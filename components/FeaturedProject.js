@@ -20,13 +20,13 @@ export default function FeaturedProject(props) {
     >
       <Animation index={props.index}>
         {icon && (
-          <Lottie
-            lottieRef={iconRef}
-            style={{ width: 24, height: 24, marginBottom: 10 }}
-            animationData={icon}
-            loop={false}
-            autoplay={false}
-          />
+        <Lottie
+          lottieRef={iconRef}
+          style={{ width: 24, height: 24, marginBottom: 10 }}
+          animationData={icon}
+          loop={false}
+          autoplay={false}
+        />
         )}
         <Body>
           <Title>{project.title}</Title>
