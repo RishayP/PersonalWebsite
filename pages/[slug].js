@@ -11,11 +11,11 @@ function Post(props) {
 
   const title = `${props.title} // Rishay Puri`
   const description = props.description || ''
-  const url = `https://zenorocha.com/${props.slug}`
+  const url = `https://rishaypuri.com/${props.slug}`
   const date = new Date(props.date).toISOString()
   const image = props.image
-    ? `https://zenorocha.com${props.image}`
-    : 'https://zenorocha.com/static/images/home-opt.jpg'
+    ? `https://rishaypuri.com${props.image}`
+    : 'https://rishaypuri.com/static/images/home-opt.jpg'
 
   return (
     <>
@@ -64,7 +64,7 @@ export async function getStaticProps({ params }) {
     const content = await convertMarkdownToHtml(post.content || '')
 
     const isProd = process.env.NODE_ENV === 'production'
-    const base = isProd ? 'https://zenorocha.com' : 'http://localhost:3000'
+    const base = isProd ? 'https://rishaypuri.com' : 'http://localhost:3000'
 
     return {
       props: {

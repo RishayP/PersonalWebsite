@@ -26,8 +26,8 @@ function Writing(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://zenorocha.com/writing" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://rishaypuri.com/writing" property="og:url" />
+        <meta content={`https://rishaypuri.com${image}`} property="og:image" />
       </Head>
 
       <ComingSoon>

@@ -210,22 +210,24 @@ export default function CommandBar(props) {
   return (
     <CommandBarContext.Provider value={contextValue}>
       <StyledCommandDialog open={open} onOpenChange={setOpen} modal={true}>
-        <StyledCommandInput placeholder="Type a command or search…" />
-        <StyledCommandList>
-          <StyledCommandEmpty>No results found.</StyledCommandEmpty>
-          {Object.entries(groupedActions).map(([section, sectionActions]) => (
-            <StyledCommandGroup key={section} heading={section}>
-              {sectionActions.map(action => (
-                <ActionCommandItem
-                  key={action.id}
-                  action={action}
-                  value={`${action.name} ${action.keywords}`}
-                  onSelect={() => action.perform()}
-                />
-              ))}
-            </StyledCommandGroup>
-          ))}
-        </StyledCommandList>
+        <CommandWrapper>
+          <StyledCommandInput placeholder="Type a command or search…" />
+          <StyledCommandList>
+            <StyledCommandEmpty>No results found.</StyledCommandEmpty>
+            {Object.entries(groupedActions).map(([section, sectionActions]) => (
+              <StyledCommandGroup key={section} heading={section}>
+                {sectionActions.map(action => (
+                  <ActionCommandItem
+                    key={action.id}
+                    action={action}
+                    value={`${action.name} ${action.keywords}`}
+                    onSelect={() => action.perform()}
+                  />
+                ))}
+              </StyledCommandGroup>
+            ))}
+          </StyledCommandList>
+        </CommandWrapper>
       </StyledCommandDialog>
 
       {props.children}
@@ -351,30 +353,37 @@ const ActionRow = styled('div', {
 //     },
 //   },
 
+const CommandWrapper = styled('div', {
+  width: '600px',
+  maxWidth: 'calc(100vw - 32px)',
+})
+
 const StyledCommandDialog = styled(CommandDialog, {
+  position: 'fixed',
+  inset: 0,
+  zIndex: 9999,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   '& [data-radix-dialog-overlay]': {
     position: 'fixed',
     inset: '0px',
     backgroundColor: 'rgba(0, 0, 0, .8)',
     cursor: 'pointer',
+    zIndex: 9998,
   },
-  '& [cmdk-dialog]': {
-    position: 'fixed',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    inset: '0px',
-    padding: '14vh 16px 16px',
-    boxSizing: 'border-box',
-    pointerEvents: 'none',
-    zIndex: 1,
-  },
-  '& [cmdk-root]': {
-    pointerEvents: 'auto',
-    maxWidth: '600px',
-    width: '100%',
+  '& [data-radix-dialog-content]': {
+    position: 'relative !important',
+    top: 'auto !important',
+    left: 'auto !important',
+    right: 'auto !important',
+    bottom: 'auto !important',
+    transform: 'none !important',
+    margin: '0 !important',
+    padding: '0 !important',
+    background: 'transparent !important',
+    border: 'none !important',
+    zIndex: 9999,
   },
 })
 
@@ -382,7 +391,6 @@ const StyledCommandInput = styled(CommandInput, {
   padding: '12px 16px',
   fontSize: '16px',
   width: '100%',
-  maxWidth: '600px',
   boxSizing: 'border-box',
   outline: 'none',
   border: 'none',
@@ -398,7 +406,6 @@ const StyledCommandList = styled(CommandList, {
   backgroundColor: '#1a1c1e',
   maxHeight: '400px',
   width: '100%',
-  maxWidth: '600px',
   overflow: 'auto',
   borderBottomLeftRadius: '8px',
   borderBottomRightRadius: '8px',
