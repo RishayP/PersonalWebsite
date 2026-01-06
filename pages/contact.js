@@ -62,6 +62,10 @@ function Contact(props) {
 
       <Box>
         <p dangerouslySetInnerHTML={{ __html: description }} />
+        <p style={{ marginTop: '16px' }}>
+          If you would prefer to email in the app{' '}
+          <MailtoLink href="mailto:rishaypuri@gmail.com">click here</MailtoLink>.
+        </p>
         <h2>Send me an email</h2>
         <Form onSubmit={onSendEmail}>
           <FormGroup>
@@ -141,6 +145,19 @@ const Button = styled('button', {
   transition: 'all 0.2s ease-in-out',
   '&:hover': { background: 'transparent', borderColor: '$cyan', color: '$cyan' },
   '&:focus': { background: 'transparent', borderColor: '$cyan', color: '$cyan', outline: 'none' },
+})
+
+const MailtoLink = styled('a', {
+  color: '$cyan',
+  textDecoration: 'none !important',
+  borderBottom: 'none !important',
+  fontWeight: 500,
+  transition: 'opacity 0.2s ease-in-out, text-decoration 0.2s ease-in-out',
+  '&:hover': {
+    opacity: 0.7,
+    textDecoration: 'underline !important',
+    borderBottom: 'none !important',
+  },
 })
 
 Contact.Layout = Base
